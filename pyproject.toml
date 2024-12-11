@@ -7,10 +7,12 @@ authors = ["byrro <rmbyrro@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.10"
 arcade-ai = "0.1.*"
+httpx = "^0.28.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^8.3.0"
 pytest-cov = "^4.0.0"
+pytest-asyncio = "^0.24.0"
 mypy = "^1.5.1"
 pre-commit = "^3.4.0"
 tox = "^4.11.1"
