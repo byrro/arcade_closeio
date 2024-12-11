@@ -1,2 +1,2 @@
 
-BASE_URL = ""
+BASE_URL = "https://api.close.com/api/v1"
