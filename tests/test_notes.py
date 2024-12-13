@@ -4,7 +4,7 @@ from httpx import Request, Response
 import pytest
 
 from arcade.sdk.errors import ToolExecutionError
-from arcade_closeio.tools.notes import create_note
+from arcade_closeio.tools.notes import create_note_for_lead
 
 
 @pytest.fixture
@@ -44,7 +44,7 @@ async def test_create_note_happy_path(mock_client, mock_context) -> None:
         request=MagicMock(spec=Request),
     )
 
-    result = await create_note(
+    result = await create_note_for_lead(
         context=mock_context,
         lead_id="lead_id",
         note_content="<p>Hello, world</p>",
@@ -61,7 +61,7 @@ async def test_create_note_http_error(mock_client, mock_context) -> None:
     )
 
     with pytest.raises(ToolExecutionError):
-        await create_note(
+        await create_note_for_lead(
             context=mock_context,
             lead_id="lead_id",
             note_content="<p>Hello, world</p>",

@@ -8,7 +8,7 @@ from arcade_closeio.tools.utils import get_headers, get_url
 
 
 @tool
-async def create_note(
+async def create_note_for_lead(
     context: ToolContext,
     lead_id: Annotated[str, "The lead id in Close.io"],
     note_content: Annotated[str, "Note content (accepts HTML)"],

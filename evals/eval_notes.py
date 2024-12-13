@@ -7,7 +7,7 @@ from arcade.sdk.eval import (
 )
 
 import arcade_closeio
-from arcade_closeio.tools.notes import create_note
+from arcade_closeio.tools.notes import create_note_for_lead
 
 # Evaluation rubric
 rubric = EvalRubric(
@@ -37,10 +37,10 @@ def closeio_eval_suite() -> EvalSuite:
     suite.add_case(
         name="Create note for a lead on Close.io",
         user_message=(
-            "Create a note on Close.io for the lead id 'user_id': 'quick brown fox'"
+            "Create a note on Close.io for the lead id '123abcX': 'quick brown fox'"
         ),
         expected_tool_calls=[
-            (create_note, {"lead_id": "lead_id", "note_content": "quick brown fox"}),
+            (create_note_for_lead, {"lead_id": "123abcX", "note_content": "quick brown fox"}),
         ],
         rubric=rubric,
         critics=[
